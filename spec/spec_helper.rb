@@ -8,5 +8,11 @@ require 'placebo'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  
+
+  # TODO: vcr this.
+  Placebo.name = ENV['PLACEBO_NAME']
+  Placebo.token = ENV['PLACEBO_TOKEN']
+
+  # TODO: cleanup & teardown
+
 end

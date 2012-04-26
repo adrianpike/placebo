@@ -1,9 +1,46 @@
 = placebo
 
-Description goes here.
+Placebo is a gem for interacting with the CapsuleCRM API. (http://capsulecrm.com/help/page/javelin_api_party)
+
+== README-driven development
+
+  parties = Placebo::Party.search('search terms', :start => 100, :limit => 50)
+
+  party = Placebo::Party.find(EXAMPLE_ORG_ID)
+  party.firstName = 'Tom'
+  party.lastName = 'Johnson'
+  party.save
+
+  person = Placebo::Party::Person.new
+  person.first_name = 'Frank'
+  person.last_name = 'Beans'
+  person.contacts # => []
+
+  address = Placebo::Address.new({
+    :type => 'Office',
+    :street => '555 123 Test Drive'
+  })
+
+  person.contacts << address
+
+  email = Placebo::Email.new({
+    :type => 'Work',
+    :emailAddress => 'Testing'
+  })
+
+  person.save
+
+== Gotchas
+
+* Make sure and use Capsule's lowerCaseFirstCamelCased attribute instead of underscored or CamelCased attributes.
+
+== TODO
+
+* Parties become their appropriate child classes
+* Subresources are actual classes and have proper associations.
 
 == Contributing to placebo
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
