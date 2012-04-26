@@ -11,8 +11,11 @@ module Placebo
       super
     end
 
-    def self.search(*args)
-      # TODO
+    def self.search(query, opts = {})
+      self.where(opts.merge({
+        :q => query,
+        :possible_resource_types => ['contact','person','organization']
+      }))
     end
 
   end

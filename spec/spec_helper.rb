@@ -9,10 +9,14 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
 
-  # TODO: vcr this.
   Placebo.name = ENV['PLACEBO_NAME']
   Placebo.token = ENV['PLACEBO_TOKEN']
 
-  # TODO: cleanup & teardown
+  unless (Placebo.name and Placebo.token) then
+
+    # TODO: vcr this.
+    raise Exception 'We need a name & token to run integration tests'
+
+  end
 
 end
