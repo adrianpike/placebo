@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "placebo"
   gem.homepage = "http://github.com/adrianpike/placebo"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Placebo is a gem for interacting with the CapsuleCRM API.}
+  gem.description = %Q{Placebo is a gem for interacting with the CapsuleCRM API.}
   gem.email = "adrian@pikeapps.com"
   gem.authors = ["Adrian Pike"]
   # dependencies defined in Gemfile
