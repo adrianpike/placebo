@@ -55,9 +55,21 @@ module Placebo
 
   class HistoryItem < PartyChild
 
+    def write_path(id=nil)
+      raise NoParent unless self['party_id']
+      [self.class.base_uri, 'party', self['party_id'], 'history', id].compact.join('/')
+    end
+
+    def self.xml_name
+      'historyItem'
+    end
+
   end
 
-  class Tag < PartyChild
+  class Kase < PartyChild
+  end
+
+  class Opportunity < PartyChild
 
   end
 

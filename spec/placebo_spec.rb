@@ -98,4 +98,40 @@ describe "Placebo" do
   it "can change contact information"
   it "can remove contact information"
 
+  it "lets me add a note to a party" do
+
+    note = Placebo::HistoryItem.new({
+      :party_id => @global_party.id,
+      :note => 'Test note'
+    })
+    note.save.should == true
+
+  end
+
+  it "lets me add a case to a party" do
+
+    my_case = Placebo::Kase.new({
+      :party_id => '22450717',
+      :name => 'Test case',
+      :description => 'An example case'
+    })
+    my_case.save.should == true
+
+  end
+
+  it "lets me add an opportunity to a party" do
+
+    my_opp = Placebo::Opportunity.new({
+      :party_id => '22450717',
+      :name => 'Test opp',
+      :description => 'An example opp',
+      :currency => 'USD',
+      :value => '2000.00',
+      :milestone => 'test'
+    })
+    my_opp.save.should == true
+
+  end
+
+
 end

@@ -33,6 +33,8 @@ Placebo is a gem for interacting with the CapsuleCRM API. (http://capsulecrm.com
 == Gotchas
 
 * Make sure and use Capsule's lowerCaseFirstCamelCased attribute instead of underscored or CamelCased attributes.
+* Cases are actually called Kases. Yeah. I know.
+* Milestones for opportunities are required. Yeah. I know.
 
 == TODO
 
