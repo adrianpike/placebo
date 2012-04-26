@@ -61,8 +61,6 @@ module Placebo
         ActiveSupport::Inflector.pluralize(type)
       }
 
-      p response.parsed_response
-
       resources = []
       plural_types.each{|collection_name|
         singular_types.each{|singular_type|

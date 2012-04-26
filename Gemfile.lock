@@ -45,7 +45,7 @@ DEPENDENCIES
   activesupport (~> 3.2)
   builder
   bundler (~> 1.1)
-  hashie!
+  hashie (= 2.0.0.beta)!
   httparty
   jeweler (~> 1.8.3)
   rspec (~> 2.8.0)
