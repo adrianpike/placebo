@@ -3,6 +3,13 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe "Placebo" do
 
   before(:all) do
+    parties = []
+    parties += Placebo::Party.search('tester')
+    parties += Placebo::Party.search('has_contact')
+    parties.each{|party|
+      party.destroy
+    }
+
     @global_party = Placebo::Person.new({firstName: 'tester'})
     @global_party.lastName = 'search'
     @global_party.save.should == true
@@ -130,6 +137,16 @@ describe "Placebo" do
       :milestone => 'test'
     })
     my_opp.save.should == true
+
+  end
+
+  it "lets me add a tag to a party" do
+
+    tag = Placebo::Tag.new({
+      :party_id => @global_party.id,
+      :name => 'testing123'
+    })
+    tag.save.should == true
 
   end
 

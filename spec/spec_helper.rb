@@ -15,7 +15,7 @@ RSpec.configure do |config|
   unless (Placebo.name and Placebo.token) then
 
     # TODO: vcr this.
-    raise Exception 'We need a name & token to run integration tests'
+    raise Exception, 'We need a name & token to run integration tests'
 
   end
 

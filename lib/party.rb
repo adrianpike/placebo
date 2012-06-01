@@ -70,6 +70,14 @@ module Placebo
   end
 
   class Opportunity < PartyChild
+  end
+
+  class Tag < PlaceboResource
+
+    def write_path(id = nil)
+      raise NoParent unless self['party_id']
+      [self.class.base_uri, 'party', self['party_id'], self.class.resource_name, self['name']].compact.join('/')
+    end
 
   end
 
